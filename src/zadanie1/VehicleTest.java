@@ -8,14 +8,21 @@ public class VehicleTest {
 
         Car[] cars=new Car[4];
 
-        cars[0 ]= new Car("Maluch",100, 3.20,false);
+        cars[0]= new Car("Maluch",100, 3.2,false);
         cars[1]=new Car("Mal",100, 3.2, true);
         cars[2]= new Truck("Tir",100,3.2,false,0);
         cars[3]=new Truck("Ti",100,3.2,true,200);
 
         for(int i=0;i<cars.length;i++){
             cars[i].showInfo();
-        }
+       }
+
+       //sprawdzenie warunków
+        cars[0].showInfo();
+        cars[0].airCon=true;
+        cars[0].showInfo();
+        cars[0].airCon=false;
+        cars[0].showInfo();
     }
 
 

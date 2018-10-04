@@ -35,11 +35,12 @@ public class Vehicle {
         this.combustion = combustion;
     }
 
-    double Range(){
-        double range=fuel/combustion*100;
-    return range;}
+    double Range() {
+        double range = fuel / combustion * 100;
+        return range;
+    }
 
-    void showInfo(){
-        System.out.println(name+" pojemność baku: "+fuel+" spalanie na 100km: "+combustion+ " zasięg: "+Range());
+    void showInfo() {
+        System.out.println(name + " pojemność baku: " + fuel + " spalanie na 100km: " + combustion + " zasięg: " + Range());
     }
 }
