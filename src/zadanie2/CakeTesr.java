@@ -18,7 +18,7 @@ public class CakeTesr {
             System.out.print("Czy ma krem ?");
             boolean cream = scanner.nextBoolean();
             scanner.nextLine();
-            System.out.print("Ile jest ciastek");
+            System.out.print("Ile jest ciastek? ");
             int count = scanner.nextInt();
             scanner.nextLine();
             cakes[i] = new Cake(name, cream, count);
