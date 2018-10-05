@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class CakeTesr {
     public static void main(String[] args) {
-        Cake[] cakes = new Cake[3];
+        Cake[] cakes = new Cake[4];
 
         Scanner scanner = new Scanner(System.in);
 
@@ -33,6 +33,7 @@ public class CakeTesr {
         System.out.println(cakes[0].toString());
         System.out.println(cakes[1].toString());
         System.out.println(cakes[2].toString());
+        System.out.println(cakes[3].toString());
 
     }
 }

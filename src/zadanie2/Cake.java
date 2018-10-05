@@ -1,9 +1,9 @@
 package zadanie2;
 
 public class Cake {
-    String name;
-    boolean cream;
-    int count;
+    private String name;
+   private boolean cream;
+    private int count;
 
     public Cake(String name, boolean cream, int count) {
         this.name = name;
@@ -58,6 +58,6 @@ public class Cake {
 
     @Override
     public String toString() {
-        return "Ciastko: {name= " + name + ", cream= " + cream + ", count= " + count + "}";
+        return "Ciastko: {name= " + getName() + ", cream= " + isCream() + ", count= " + getCount() + "}";
     }
 }

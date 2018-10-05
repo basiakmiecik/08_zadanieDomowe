@@ -1,7 +1,7 @@
 package zadanie1;
 
 public class Car extends Vehicle {
-    boolean airCon;
+   private boolean airCon;
 
     public Car(String name, double fuel, double combustion, boolean airCon) {
         super(name, fuel, combustion);
@@ -17,16 +17,20 @@ public class Car extends Vehicle {
     }
 
     @Override
-    void showInfo() {
-        if (airCon) {
-            setCombustion(getCombustion() + 0.8);
-        }
-        super.showInfo();
-        System.out.println(" klimatyzacja?: " + airCon);
-
-        //powrót do wartości początkowych
-        if(airCon){
-            setCombustion(getCombustion() - 0.8);
-        }
+    public String toString() {
+        return (super.toString() + " klimatyzacja?: " + airCon);
     }
+
+    @Override
+    public double comb() {
+        double combust = super.comb();
+        if (airCon) {
+            combust = getCombustion() + 0.8;
+        } else {
+            combust = getCombustion();
+        }
+        return combust;
+    }
+
+
 }

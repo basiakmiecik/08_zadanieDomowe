@@ -1,9 +1,9 @@
 package zadanie1;
 
 public class Vehicle {
-    String name;
-    double fuel;
-    double combustion;
+    private String name;
+    private double fuel;
+    private double combustion;
 
     public Vehicle(String name, double fuel, double combustion) {
         this.name = name;
@@ -35,12 +35,20 @@ public class Vehicle {
         this.combustion = combustion;
     }
 
-    double Range() {
-        double range = fuel / combustion * 100;
-        return range;
+
+    double comb() {
+        double combust = getCombustion();
+
+        return combust;
     }
 
-    void showInfo() {
-        System.out.println(name + " pojemność baku: " + fuel + " spalanie na 100km: " + combustion + " zasięg: " + Range());
+    double range() {
+        double ranger = fuel / comb() * 100;
+        return ranger;
+    }
+
+    @Override
+    public String toString() {
+        return (name + " pojemność baku: " + fuel + " spalanie na 100km: " + comb() + " zasięg: " + range());
     }
 }

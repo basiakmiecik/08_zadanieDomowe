@@ -3,7 +3,7 @@ package zadanie1;
 import zadanie1.Car;
 
 public class Truck extends Car {
-    double loadWeight;
+    private double loadWeight;
 
     public Truck(String name, double fuel, double combustion, boolean airCon, double loadWeight) {
         super(name, fuel, combustion, airCon);
@@ -19,24 +19,23 @@ public class Truck extends Car {
     }
 
     @Override
-    void showInfo() {
-        double comb=getCombustion();
-        if (airCon) {
-            setCombustion(comb + 1.6);
+    public double comb() {
+
+        double combust = getCombustion();
+        if (getAirCon()) {
+            combust = combust + 1.6;
         }
         if (loadWeight >= 100) {
-            setCombustion(comb + 0.5 * loadWeight / 100);
+            combust = combust + 0.5 * loadWeight / 100;
         }
-        super.showInfo();
-        System.out.println(" waga ładunku: " + loadWeight);
-
-
-        //powrót do wartości początkowych
-        if (airCon) {
-            setCombustion(comb - 1.6);
-        }
-        if (loadWeight >= 100) {
-            setCombustion(comb - 0.5 * loadWeight / 100);
-        }
+        return combust;
     }
+
+    @Override
+    public String toString() {
+
+        return (super.toString() + " waga ładunku: " + loadWeight);
+    }
+
+
 }
